@@ -5,10 +5,14 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 function Header() {
+  const currentHours =
+    new Date().getHours() % 12 < 10
+      ? `0${new Date().getHours() % 12}`
+      : new Date().getHours() % 12;
+
   const amOrpm = new Date().getHours() > 12 ? "PM" : "AM";
-  const Time = `${
-    new Date().getHours() % 12
-  } : ${new Date().getMinutes()} ${amOrpm}`;
+
+  const Time = `${currentHours} : ${new Date().getMinutes()} ${amOrpm}`;
   return (
     <div className="header">
       <div className="links">
@@ -16,9 +20,9 @@ function Header() {
         <span>Media</span>
       </div>
       <div className="icons">
-        <AiOutlineSearch />
-        <AiOutlineSetting />
-        <AiOutlineUser />
+        <AiOutlineSearch className="header-icon" />
+        <AiOutlineSetting className="header-icon" />
+        <AiOutlineUser className="header-icon" />
         {Time}
       </div>
     </div>
