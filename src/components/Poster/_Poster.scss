@@ -1,0 +1,14 @@
+.poster-img img {
+  width: 200px;
+  border-radius: 10px;
+  margin: 0 7px;
+  transition: 0.3s;
+  object-fit: contain;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.poster-img img:hover {
+  transform: scale(1.06);
+  border: 1px solid white;
+}
