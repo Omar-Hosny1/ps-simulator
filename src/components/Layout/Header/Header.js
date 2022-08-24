@@ -4,6 +4,7 @@ import {
   AiOutlineSetting,
   AiOutlineUser,
 } from "react-icons/ai";
+import { FaBatteryFull } from "react-icons/fa";
 function Header() {
   const currentHours =
     new Date().getHours() % 12 < 10
@@ -24,6 +25,7 @@ function Header() {
         <AiOutlineSetting className="header-icon" />
         <AiOutlineUser className="header-icon" />
         {Time}
+        <FaBatteryFull className="battery" />
       </div>
     </div>
   );

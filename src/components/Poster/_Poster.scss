@@ -1,7 +1,7 @@
 .poster-img img {
-  width: 200px;
+  width: 170px;
   border-radius: 10px;
-  margin: 0 7px;
+  margin: 5px 10px 0 10px;
   transition: 0.3s;
   object-fit: contain;
   border: 1px solid transparent;
@@ -9,6 +9,6 @@
   cursor: pointer;
 }
 .poster-img img:hover {
-  transform: scale(1.06);
+  transform: scale(1.1);
   border: 1px solid white;
 }

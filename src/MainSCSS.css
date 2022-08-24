@@ -1,9 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  height: 100v;
+}
+
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 30px 30px 0;
   color: white;
+  z-index: 1;
+  position: relative;
 }
 .header .links span {
   font-size: 20px;
@@ -28,6 +52,16 @@
   border-radius: 50%;
   background-color: white;
   color: black;
+}
+.header .battery {
+  transform: rotate(270deg);
+  color: rgb(59, 255, 59);
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.PosterView {
+  transition: 1s all;
 }
 
 .background-image {
@@ -60,10 +94,73 @@
   }
 }
 
+.poster-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 100px 45px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  -webkit-animation: posterInfo 1s ease-out;
+          animation: posterInfo 1s ease-out;
+}
+.poster-info h1 {
+  margin: 10px 0 -7px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.poster-info p {
+  margin: 3px 0;
+  font-weight: 200;
+}
+.poster-info .play-btn {
+  box-sizing: border-box;
+  width: 240px;
+  font-size: 20px;
+  padding: 5px 3px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  border: none;
+  margin-top: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.poster-info .play-btn:hover {
+  background-color: rgb(179, 179, 179);
+}
+@-webkit-keyframes posterInfo {
+  0% {
+    bottom: -250px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes posterInfo {
+  0% {
+    bottom: -250px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+#black-overly {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100vh;
+  z-index: 0;
+  background-image: linear-gradient(270deg, transparent, rgba(0, 0, 0, 0.7137254902));
+}
+
 .poster-img img {
-  width: 200px;
+  width: 170px;
   border-radius: 10px;
-  margin: 0 7px;
+  margin: 5px 10px 0 10px;
   transition: 0.3s;
   -o-object-fit: contain;
      object-fit: contain;
@@ -73,22 +170,6 @@
 }
 
 .poster-img img:hover {
-  transform: scale(1.06);
+  transform: scale(1.1);
   border: 1px solid white;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  width: 100%;
-  height: 100v;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }/*# sourceMappingURL=MainSCSS.css.map */

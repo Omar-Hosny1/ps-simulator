@@ -1,3 +1,6 @@
+.PosterView {
+  transition: 1s all;
+}
 .background-image {
   z-index: -1;
   position: absolute;
@@ -5,6 +8,7 @@
   width: 100%;
   height: 100vh;
   animation: moveing 0.7s ease;
+
   @keyframes moveing {
     0% {
       opacity: 0;
@@ -15,4 +19,58 @@
       left: 0;
     }
   }
+}
+
+.poster-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 100px 45px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  animation: posterInfo 1s ease-out;
+  & h1 {
+    margin: 10px 0 -7px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  & p {
+    margin: 3px 0;
+    font-weight: 200;
+  }
+  & .play-btn {
+    box-sizing: border-box;
+    width: 240px;
+    font-size: 20px;
+    padding: 5px 3px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: none;
+    margin-top: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  & .play-btn:hover {
+    background-color: rgb(179, 179, 179);
+  }
+  @keyframes posterInfo {
+    0% {
+      bottom: -250px;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+}
+
+#black-overly {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100vh;
+  z-index: 0;
+  background-image: linear-gradient(270deg, transparent, #000000b6);
 }
