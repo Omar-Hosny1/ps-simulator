@@ -6,8 +6,9 @@ import {
   AiOutlinePoweroff,
 } from "react-icons/ai";
 import { FaBatteryFull } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 function Header() {
+  const navigate = useNavigate();
   const currentHours =
     new Date().getHours() % 12 < 10
       ? `0${new Date().getHours() % 12}`
@@ -45,6 +46,7 @@ function Header() {
           className="header-icon"
           onClick={() => {
             localStorage.clear();
+            navigate("/");
             document.location.reload();
           }}
         />

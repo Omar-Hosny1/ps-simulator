@@ -12,8 +12,8 @@ import Image5L from "../Images/media/viewers-marvel.png";
 
 const MediaOverviewData = [
   { image: Image1, logo: Image1L },
-  { image: Image2, logo: Image2L },
   { image: Image3, logo: Image3L },
+  { image: Image2, logo: Image2L },
   { image: Image4, logo: Image4L },
   { image: Image5, logo: Image5L },
 ];

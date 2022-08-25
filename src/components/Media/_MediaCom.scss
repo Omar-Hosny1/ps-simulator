@@ -11,7 +11,7 @@
   left: 0;
   width: 200%;
   height: 100vh;
-  background-image: linear-gradient(270deg, transparent, rgba(0, 0, 0, 0.926));
+  background-image: linear-gradient(270deg, transparent, rgba(0, 0, 0, 0.923));
   position: absolute;
 }
 
@@ -38,11 +38,34 @@
     text-transform: capitalize;
   }
 }
+
 .movies-container {
   position: absolute;
   display: flex;
   bottom: 0;
   margin-left: 50px;
-  // left: 50%;
-  // transform: translateX(-50%);
+}
+.media-container {
+  & :nth-child(1) {
+    background-color: #011375;
+  }
+  & :nth-child(2) {
+    background-color: #e51920;
+  }
+  & :nth-child(3) {
+    background-color: black;
+  }
+  & :nth-child(4) {
+    background-color: #81a3d1;
+  }
+  & :nth-child(5) {
+    background-color: #e0cf1c;
+  }
+}
+.fea-span {
+  position: absolute;
+  bottom: 205px;
+  margin-left: 50px;
+  color: #dbdbdb;
+  text-transform: uppercase;
 }
