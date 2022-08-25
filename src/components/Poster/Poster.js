@@ -5,12 +5,14 @@ import { useNavigate, Link } from "react-router-dom";
 function Poster(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const dispatchData = () => {
     dispatch(GameActions.updateData(props));
     setTimeout(() => {
-      navigate(`/`);
+      navigate(`/`, { replace: true });
     }, 0);
   };
+
   return (
     <div className={`poster-img`}>
       <Link to={"/refresh"}>

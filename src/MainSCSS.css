@@ -114,8 +114,11 @@ code {
 }
 .poster-info h1 {
   margin: 10px 0 -7px;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   text-transform: uppercase;
+  font-size: 55px;
+  font-family: "Amatic SC", cursive;
+  font-family: "Luckiest Guy", cursive;
 }
 .poster-info p {
   margin: 3px 0;
@@ -206,7 +209,7 @@ code {
 }
 
 .start {
-  top: 150%;
+  top: -1050px;
 }
 
 .poster-img img {
