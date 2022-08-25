@@ -64,7 +64,7 @@ const Data = [
   },
   {
     image: Image8,
-    title: "The Last of us",
+    title: "The Last of us 2",
     desc: "SONY",
     poster: Image8P,
     id: Math.random(),

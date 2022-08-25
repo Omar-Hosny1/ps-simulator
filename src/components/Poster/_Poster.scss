@@ -4,11 +4,15 @@
   margin: 5px 10px 0 10px;
   transition: 0.3s;
   object-fit: contain;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   box-sizing: border-box;
   cursor: pointer;
 }
 .poster-img img:hover {
   transform: scale(1.1);
-  border: 1px solid white;
+  border: 2px solid white;
+}
+
+.poster-img.selected {
+  transform: scale(1.2);
 }

@@ -1,25 +1,17 @@
 import "./App.css";
-import PosterView from "./components/PosterView/PosterView";
 import Header from "./components/Layout/Header/Header";
-import Data from "./components/Data/Data";
-import Poster from "./components/Poster/Poster";
-
+import Home from "./Pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Media from "./Pages/Media";
 function App() {
-  const Games = Data.map((ele) => (
-    <Poster
-      poster={ele.poster}
-      key={Math.random()}
-      title={ele.title}
-      desc={ele.desc}
-      image={ele.image}
-      id={ele.id}
-    />
-  ));
   return (
     <div className="App">
       <Header />
-      <div className="games-container">{Games}</div>
-      <PosterView />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/media" element={<Media />} />
+        <Route path="/refresh" element={<></>} />
+      </Routes>
     </div>
   );
 }

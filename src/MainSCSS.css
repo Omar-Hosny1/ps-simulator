@@ -8,6 +8,7 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100v;
+  background-color: rgb(25, 25, 25);
 }
 
 h1,
@@ -29,12 +30,17 @@ code {
   z-index: 1;
   position: relative;
 }
-.header .links span {
+.header .links .navlink {
   font-size: 20px;
   margin: 0 10px;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
-.header .links span:nth-child(2) {
+.header .active {
+  font-weight: 700;
+}
+.header .not-active {
   font-weight: 200;
 }
 .header .icons {
@@ -43,7 +49,7 @@ code {
 }
 .header .icons .header-icon {
   font-size: 25px;
-  margin: 0 25px;
+  margin: 0 15px;
   cursor: pointer;
   padding: 5px;
   transition: 0.3s;
@@ -55,7 +61,7 @@ code {
 }
 .header .battery {
   transform: rotate(270deg);
-  color: rgb(59, 255, 59);
+  color: rgb(85, 255, 70);
   font-size: 17px;
   margin-left: 10px;
 }
@@ -103,8 +109,8 @@ code {
   font-size: 20px;
   text-align: center;
   letter-spacing: 1.5px;
-  -webkit-animation: posterInfo 1s ease-out;
-          animation: posterInfo 1s ease-out;
+  -webkit-animation: posterInfo 0.7s forwards ease-in-out;
+          animation: posterInfo 0.7s forwards ease-in-out;
 }
 .poster-info h1 {
   margin: 10px 0 -7px;
@@ -114,6 +120,7 @@ code {
 .poster-info p {
   margin: 3px 0;
   font-weight: 200;
+  text-transform: uppercase;
 }
 .poster-info .play-btn {
   box-sizing: border-box;
@@ -134,12 +141,18 @@ code {
   0% {
     bottom: -250px;
   }
+  50% {
+    bottom: -250px;
+  }
   100% {
     bottom: 0;
   }
 }
 @keyframes posterInfo {
   0% {
+    bottom: -250px;
+  }
+  50% {
     bottom: -250px;
   }
   100% {
@@ -151,10 +164,49 @@ code {
   position: absolute;
   top: 0;
   left: 0;
-  width: 150%;
+  width: 200%;
   height: 100vh;
   z-index: 0;
   background-image: linear-gradient(270deg, transparent, rgba(0, 0, 0, 0.7137254902));
+}
+
+.lock-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 100;
+  transition: 5s;
+  opacity: 1;
+}
+.lock-layer div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.lock-layer img {
+  max-width: 120px;
+}
+.lock-layer span {
+  color: white;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.lock-layer span svg {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.start {
+  top: 150%;
 }
 
 .poster-img img {
@@ -164,12 +216,20 @@ code {
   transition: 0.3s;
   -o-object-fit: contain;
      object-fit: contain;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   box-sizing: border-box;
   cursor: pointer;
 }
 
 .poster-img img:hover {
   transform: scale(1.1);
-  border: 1px solid white;
+  border: 2px solid white;
+}
+
+.poster-img.selected {
+  transform: scale(1.2);
+}
+
+.media {
+  background-position: center;
 }/*# sourceMappingURL=MainSCSS.css.map */

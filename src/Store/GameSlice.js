@@ -3,7 +3,7 @@ import Background from "../components/Images/Background.png";
 const initialState = {
   gameData: {
     image: Background,
-    title: "Astro's Playroom",
+    title: "Astro's",
     desc: "SONY",
     poster: Background,
   },
