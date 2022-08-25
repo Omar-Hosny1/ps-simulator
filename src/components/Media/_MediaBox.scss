@@ -1,0 +1,24 @@
+.media-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 30px;
+  width: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  & img:nth-child(1) {
+    margin-bottom: -15px;
+    z-index: 1;
+  }
+  & img:nth-child(2) {
+    background-color: #1d1d1d;
+    min-width: 200px;
+    z-index: 0;
+    height: 70px;
+    padding-top: 10px;
+    object-fit: contain;
+  }
+  & img {
+    max-width: 200px;
+  }
+}

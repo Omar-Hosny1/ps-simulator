@@ -263,7 +263,7 @@ code {
 .media-movie {
   position: absolute;
   left: 0;
-  bottom: 200px;
+  bottom: 250px;
   color: white;
   max-width: 530px;
   text-transform: uppercase;
@@ -277,10 +277,43 @@ code {
   text-transform: capitalize;
 }
 
+.movies-container {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  margin-left: 50px;
+}
+
 .media-poster {
   max-width: 180px;
   border: 2px solid white;
   margin: 5px 10px;
   background-color: black;
   border-radius: 7px;
+}
+
+.media-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 30px;
+  width: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.media-box img:nth-child(1) {
+  margin-bottom: -15px;
+  z-index: 1;
+}
+.media-box img:nth-child(2) {
+  background-color: #1d1d1d;
+  min-width: 200px;
+  z-index: 0;
+  height: 70px;
+  padding-top: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.media-box img {
+  max-width: 200px;
 }/*# sourceMappingURL=MainSCSS.css.map */
