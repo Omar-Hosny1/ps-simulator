@@ -179,7 +179,7 @@ code {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   z-index: 100;
   transition: 5s;
   opacity: 1;
@@ -195,6 +195,7 @@ code {
 }
 .lock-layer img {
   max-width: 120px;
+  cursor: pointer;
 }
 .lock-layer span {
   color: white;
@@ -234,5 +235,52 @@ code {
 }
 
 .media {
-  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.media::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100vh;
+  background-image: linear-gradient(270deg, transparent, rgba(0, 0, 0, 0.926));
+  position: absolute;
+}
+
+.media-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+.media-movie {
+  position: absolute;
+  left: 0;
+  bottom: 200px;
+  color: white;
+  max-width: 530px;
+  text-transform: uppercase;
+  margin-left: 50px;
+}
+.media-movie h1 {
+  margin: 10px 0;
+}
+.media-movie p {
+  font-weight: 100;
+  text-transform: capitalize;
+}
+
+.media-poster {
+  max-width: 180px;
+  border: 2px solid white;
+  margin: 5px 10px;
+  background-color: black;
+  border-radius: 7px;
 }/*# sourceMappingURL=MainSCSS.css.map */
