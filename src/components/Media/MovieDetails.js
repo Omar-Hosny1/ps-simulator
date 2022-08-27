@@ -17,4 +17,4 @@ function MovieDetails(props) {
   );
 }
 
-export default MovieDetails;
+export default React.memo(MovieDetails);

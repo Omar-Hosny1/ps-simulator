@@ -9,4 +9,4 @@ function Media() {
   );
 }
 
-export default Media;
+export default React.memo(Media);

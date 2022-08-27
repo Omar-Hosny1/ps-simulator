@@ -20,4 +20,4 @@ function PosterView() {
   );
 }
 
-export default PosterView;
+export default React.memo(PosterView);

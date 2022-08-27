@@ -4,4 +4,4 @@ function MediaPoster(props) {
   return <img src={props.image} className="media-poster" />;
 }
 
-export default MediaPoster;
+export default React.memo(MediaPoster);

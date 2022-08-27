@@ -36,4 +36,4 @@ function MediaCom() {
   );
 }
 
-export default MediaCom;
+export default React.memo(MediaCom);

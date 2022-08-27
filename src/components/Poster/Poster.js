@@ -22,4 +22,4 @@ function Poster(props) {
   );
 }
 
-export default Poster;
+export default React.memo(Poster);

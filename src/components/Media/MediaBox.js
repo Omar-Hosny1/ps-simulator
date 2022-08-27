@@ -9,4 +9,4 @@ function MediaBox(props) {
   );
 }
 
-export default MediaBox;
+export default React.memo(MediaBox);
