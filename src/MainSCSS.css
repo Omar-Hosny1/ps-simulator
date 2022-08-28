@@ -214,7 +214,7 @@ code {
 }
 
 .poster-img img {
-  width: 170px;
+  width: 210px;
   border-radius: 10px;
   margin: 5px 10px 0 10px;
   transition: 0.3s;
@@ -230,8 +230,19 @@ code {
   border: 2px solid white;
 }
 
-.poster-img.selected {
-  transform: scale(1.2);
+.games-container {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+  overflow-x: scroll;
+  padding: 14px 0;
+}
+
+.games-container::-webkit-scrollbar {
+  display: none;
 }
 
 .media {
@@ -263,7 +274,7 @@ code {
 .media-movie {
   position: absolute;
   left: 0;
-  bottom: 250px;
+  bottom: 300px;
   color: white;
   max-width: 530px;
   text-transform: uppercase;
@@ -309,11 +320,13 @@ code {
 }
 
 .media-poster {
-  max-width: 180px;
+  width: 180px;
   border: 2px solid white;
   margin: 5px 45px 0 0;
   border-radius: 7px;
   transition: 0.3s;
+  -o-object-fit: contain;
+     object-fit: contain;
   cursor: pointer;
 }
 .media-poster:hover {
@@ -346,17 +359,8 @@ code {
   max-width: 200px;
 }
 
-.login-page {
+.login-page-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-  z-index: 100;
-}
-.login-page .login-page-container {
-  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -364,25 +368,87 @@ code {
   flex-direction: column;
   align-items: center;
 }
-.login-page .login-btn {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  font-size: 70px;
-  color: black;
+.login-page-container span {
+  position: absolute;
+  bottom: -28px;
+  color: white;
   cursor: pointer;
-  background-color: white;
+  font-size: 20px;
+  width: 96px;
+}
+
+.login-btn {
+  border-radius: 10px;
+  font-size: 100px;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.212);
   transition: 0.3s;
   box-sizing: border-box;
   z-index: 50;
   padding: 0;
 }
-.login-page .login-btn:hover {
-  padding: 10px;
+
+.login-btn:hover {
+  padding: 5px;
 }
-.login-page span {
+
+.user-msg {
   position: absolute;
-  bottom: -28px;
-  color: white;
-  cursor: pointer;
+  z-index: 10;
+  top: 0;
+  left: -285px;
+  color: rgb(41, 36, 36);
+  background-color: rgba(254, 254, 254, 0.7);
+  padding: 10px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin-top: 230px;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+.user-msg svg {
+  position: relative;
+  top: 5px;
+}
+
+.openMsg {
+  -webkit-animation: openMsg 10s ease;
+          animation: openMsg 10s ease;
+}
+
+@-webkit-keyframes openMsg {
+  0% {
+    left: -285px;
+  }
+  30% {
+    left: -285px;
+  }
+  50% {
+    left: 0;
+  }
+  80% {
+    left: 0;
+  }
+  100% {
+    left: -285px;
+  }
+}
+
+@keyframes openMsg {
+  0% {
+    left: -285px;
+  }
+  30% {
+    left: -285px;
+  }
+  50% {
+    left: 0;
+  }
+  80% {
+    left: 0;
+  }
+  100% {
+    left: -285px;
+  }
 }/*# sourceMappingURL=MainSCSS.css.map */

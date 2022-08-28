@@ -7,10 +7,14 @@ import {
 } from "react-icons/ai";
 import { FaBatteryFull } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AuthActions } from "../../../Store/AuthSlice";
 
 function Header() {
+  const isAuthenticated = useSelector(
+    (state) => state.AuthSlice.isAuthenticated
+  );
+  const userImage = useSelector((state) => state.AuthSlice.userImage);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currentHours =
@@ -61,6 +65,7 @@ function Header() {
         />
         <AiOutlineLogout className="header-icon" onClick={logoutHandler} />
         <AiOutlineSetting className="header-icon" />
+        {/* {isAuthenticated && <img src={userImage} />} */}
         <AiOutlineUser className="header-icon" />
         {Time}
         <FaBatteryFull className="battery" />

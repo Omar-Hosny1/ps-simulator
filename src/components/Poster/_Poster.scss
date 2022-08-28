@@ -1,5 +1,5 @@
 .poster-img img {
-  width: 170px;
+  width: 210px;
   border-radius: 10px;
   margin: 5px 10px 0 10px;
   transition: 0.3s;
@@ -12,7 +12,16 @@
   transform: scale(1.1);
   border: 2px solid white;
 }
-
-.poster-img.selected {
-  transform: scale(1.2);
+.games-container {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+  overflow-x: scroll;
+  padding: 14px 0;
+}
+.games-container::-webkit-scrollbar {
+  display: none;
 }

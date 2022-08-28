@@ -7,9 +7,10 @@ import { useEffect, useState } from "react";
 import api_properties from "./Api/Api";
 import { useDispatch, useSelector } from "react-redux";
 import { GameActions } from "./Store/GameSlice";
-import "./App.css";
+// import "./App.css";
 import { MoviesActions } from "./Store/MoviesSlice";
 import GoogleAuth from "./components/GoogleAuth/GoogleAuth";
+import HelloMsg from "./components/HelloMsg/HelloMsg";
 
 function App() {
   const isAuthenticated = useSelector(
@@ -35,6 +36,7 @@ function App() {
 
   return (
     <>
+      <HelloMsg />
       <Header />
       <LockScreen />
       {!isLoggedIn && <GoogleAuth />}

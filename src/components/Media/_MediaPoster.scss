@@ -1,9 +1,10 @@
 .media-poster {
-  max-width: 180px;
+  width: 180px;
   border: 2px solid white;
   margin: 5px 45px 0 0;
   border-radius: 7px;
   transition: 0.3s;
+  object-fit: contain;
   cursor: pointer;
   &:hover {
     transform: scale(1.1);

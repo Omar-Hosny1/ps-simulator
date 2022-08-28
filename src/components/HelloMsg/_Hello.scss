@@ -1,0 +1,40 @@
+.user-msg {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: -285px;
+  color: rgb(41, 36, 36);
+  background-color: rgba(254, 254, 254, 0.7);
+  padding: 10px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin-top: 230px;
+  font-size: 25px;
+  text-transform: capitalize;
+  & svg {
+    position: relative;
+    top: 5px;
+  }
+}
+
+.openMsg {
+  animation: openMsg 10s ease;
+}
+
+@keyframes openMsg {
+  0% {
+    left: -285px;
+  }
+  30% {
+    left: -285px;
+  }
+  50% {
+    left: 0;
+  }
+  80% {
+    left: 0;
+  }
+  100% {
+    left: -285px;
+  }
+}
