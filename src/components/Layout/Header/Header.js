@@ -1,13 +1,17 @@
 import React from "react";
 import {
-  AiOutlineSearch,
+  AiOutlineLogout,
   AiOutlineSetting,
   AiOutlineUser,
   AiOutlinePoweroff,
 } from "react-icons/ai";
 import { FaBatteryFull } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { AuthActions } from "../../../Store/AuthSlice";
+
 function Header() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const currentHours =
     new Date().getHours() % 12 < 10
@@ -21,6 +25,11 @@ function Header() {
       ? "0" + new Date().getMinutes()
       : new Date().getMinutes()
   } ${amOrpm}`;
+
+  const logoutHandler = () => {
+    dispatch(AuthActions.logOut());
+  };
+
   return (
     <div className="header">
       <div className="links">
@@ -50,7 +59,7 @@ function Header() {
             document.location.reload();
           }}
         />
-        <AiOutlineSearch className="header-icon" />
+        <AiOutlineLogout className="header-icon" onClick={logoutHandler} />
         <AiOutlineSetting className="header-icon" />
         <AiOutlineUser className="header-icon" />
         {Time}

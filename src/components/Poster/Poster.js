@@ -14,9 +14,9 @@ function Poster(props) {
   };
 
   return (
-    <div className={`poster-img`}>
+    <div className={`poster-img`} onClick={dispatchData}>
       <Link to={"/refresh"}>
-        <img src={props.poster} onClick={dispatchData} />
+        <img src={props.poster} />
       </Link>
     </div>
   );
