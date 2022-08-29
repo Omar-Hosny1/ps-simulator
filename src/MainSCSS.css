@@ -25,7 +25,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 30px 30px 0;
+  margin: 15px 30px 0;
   color: white;
   z-index: 1;
   position: relative;
@@ -64,6 +64,11 @@ code {
   color: rgb(85, 255, 70);
   font-size: 17px;
   margin-left: 10px;
+}
+
+.time {
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .PosterView {
@@ -215,9 +220,9 @@ code {
 }
 
 .poster-img img {
-  width: 210px;
+  width: 190px;
   border-radius: 10px;
-  margin: 5px 10px 0 10px;
+  margin: 5px 15px 0 10px;
   transition: 0.3s;
   -o-object-fit: contain;
      object-fit: contain;
@@ -260,7 +265,7 @@ code {
   left: 0;
   width: 200%;
   height: 100vh;
-  background-image: linear-gradient(270deg, transparent, rgba(0, 0, 0, 0.923));
+  background-image: linear-gradient(270deg, transparent, rgba(0, 0, 0, 0.6));
   position: absolute;
 }
 

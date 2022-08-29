@@ -5,7 +5,9 @@ function Time() {
     time: () => {
       let currTime = new Date();
       let TIME =
-        currTime.getHours() +
+        (currTime.getHours() > 12
+          ? currTime.getHours() % 12
+          : currTime.getHours()) +
         ":" +
         currTime.getMinutes() +
         ":" +
@@ -21,11 +23,13 @@ function Time() {
           time: () => {
             let currTime = new Date();
             let TIME =
-              currTime.getHours() +
+              (currTime.getHours() > 12
+                ? currTime.getHours() % 12
+                : currTime.getHours()) +
               ":" +
               currTime.getMinutes() +
-              ":" +
-              currTime.getSeconds();
+              " " +
+              (currTime.getHours() > 12 ? "PM" : "AM");
             return TIME;
           },
         }),
