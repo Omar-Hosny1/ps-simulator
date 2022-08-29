@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AiOutlineLogout,
   AiOutlineSetting,
@@ -9,6 +9,7 @@ import { FaBatteryFull } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AuthActions } from "../../../Store/AuthSlice";
+import Time from "../Time";
 
 function Header() {
   const isAuthenticated = useSelector(
@@ -17,19 +18,6 @@ function Header() {
   const userImage = useSelector((state) => state.AuthSlice.userImage);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const currentHours =
-    new Date().getHours() % 12 < 10
-      ? `0${new Date().getHours() % 12}`
-      : new Date().getHours() % 12;
-
-  const amOrpm = new Date().getHours() > 12 ? "PM" : "AM";
-
-  const Time = `${currentHours} : ${
-    new Date().getMinutes() < 10
-      ? "0" + new Date().getMinutes()
-      : new Date().getMinutes()
-  } ${amOrpm}`;
-
   const logoutHandler = () => {
     navigate("/");
     dispatch(AuthActions.logOut());
@@ -70,7 +58,7 @@ function Header() {
         <AiOutlineSetting className="header-icon" />
         {/* {isAuthenticated && <img src={userImage} />} */}
         <AiOutlineUser className="header-icon" />
-        {Time}
+        <Time />
         <FaBatteryFull className="battery" />
       </div>
     </div>
@@ -78,3 +66,18 @@ function Header() {
 }
 
 export default Header;
+
+// const currentHours =
+//   new Date().getHours() % 12 < 10
+//     ? `0${new Date().getHours() % 12}`
+//     : new Date().getHours() % 12;
+
+// const amOrpm = new Date().getHours() > 12 ? "PM" : "AM";
+
+// const Time = `${currentHours} : ${
+//   new Date().getMinutes() < 10
+//     ? "0" + new Date().getMinutes()
+//     : new Date().getMinutes()
+// } ${amOrpm}`;
+// useEffect(() => {}, []);
+// // setDate(Time);

@@ -51,12 +51,17 @@ function App() {
     default: {
       x: mousePosition.x,
       y: mousePosition.y,
-      backgroundColor: "transparent",
     },
   };
   return (
     <>
-      <motion.div className="cursor" variants={variants} animate="default" />;
+      <motion.div
+        className="cursor"
+        style={{ backgroundColor: "transparent" }}
+        variants={variants}
+        animate="default"
+      />
+      ;
       <HelloMsg />
       <Header />
       <LockScreen />

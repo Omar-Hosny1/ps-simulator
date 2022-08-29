@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { AiOutlinePlus, AiOutlineLogin } from "react-icons/ai";
-import {} from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import app from "../../firebase/firebase";
 import { AuthActions } from "../../Store/AuthSlice";
 import Image from "../Images/bluredBa.png";
+import app from "../../firebase/firebase";
+
 function GoogleAuth() {
   //project-756142748783
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ function GoogleAuth() {
   return (
     <div className="login-page" style={style}>
       <div className="login-page-container">
-        <AiOutlineLogin className="login-btn" onClick={loginHandler} />
+        <AiOutlinePlus className="login-btn" onClick={loginHandler} />
         <span>NEW USER</span>
       </div>
     </div>
