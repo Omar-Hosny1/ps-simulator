@@ -135,6 +135,7 @@ code {
   border: none;
   margin-top: 10px;
   transition: 0.3s;
+  z-index: 300;
   cursor: pointer;
 }
 .poster-info .play-btn:hover {
@@ -322,12 +323,13 @@ code {
 .media-poster {
   width: 180px;
   border: 2px solid white;
-  margin: 5px 45px 0 0;
+  margin: 5px 20px 0 0;
   border-radius: 7px;
   transition: 0.3s;
   -o-object-fit: contain;
      object-fit: contain;
   cursor: pointer;
+  z-index: 0;
 }
 .media-poster:hover {
   transform: scale(1.1);
@@ -403,7 +405,7 @@ code {
   padding: 10px;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
-  margin-top: 230px;
+  margin-top: 270px;
   font-size: 25px;
   text-transform: capitalize;
 }
@@ -451,4 +453,17 @@ code {
   100% {
     left: -285px;
   }
+}
+.cursor {
+  background-color: transparent;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: -2px;
+  z-index: 1;
+  margin-top: 2.5px;
+  border: 3.5px solid rgb(223, 223, 223);
+  padding: 6px;
 }/*# sourceMappingURL=MainSCSS.css.map */

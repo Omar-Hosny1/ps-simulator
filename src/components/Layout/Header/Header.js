@@ -31,6 +31,7 @@ function Header() {
   } ${amOrpm}`;
 
   const logoutHandler = () => {
+    navigate("/");
     dispatch(AuthActions.logOut());
     localStorage.removeItem("isStart");
     document.location.reload();

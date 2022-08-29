@@ -1,0 +1,13 @@
+.cursor {
+  background-color: transparent;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: -2px;
+  z-index: 1;
+  margin-top: 2.5px;
+  border: 3.5px solid rgb(223, 223, 223);
+  padding: 6px;
+}

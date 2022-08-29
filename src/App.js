@@ -6,13 +6,26 @@ import Home from "./Pages/Home";
 import { useEffect, useState } from "react";
 import api_properties from "./Api/Api";
 import { useDispatch, useSelector } from "react-redux";
-import { GameActions } from "./Store/GameSlice";
-// import "./App.css";
 import { MoviesActions } from "./Store/MoviesSlice";
 import GoogleAuth from "./components/GoogleAuth/GoogleAuth";
 import HelloMsg from "./components/HelloMsg/HelloMsg";
+import { motion } from "framer-motion";
 
 function App() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const mouseMoveHandler = (e) => {
+      setMousePosition({
+        x: e.clientX - 20,
+        y: e.clientY - 20,
+      });
+    };
+    window.addEventListener("mousemove", mouseMoveHandler);
+    return () => {
+      window.removeEventListener("mousemove", mouseMoveHandler);
+    };
+  });
+
   const isAuthenticated = useSelector(
     (state) => state.AuthSlice.isAuthenticated
   );
@@ -34,8 +47,16 @@ function App() {
       });
   }, []);
 
+  const variants = {
+    default: {
+      x: mousePosition.x,
+      y: mousePosition.y,
+      backgroundColor: "transparent",
+    },
+  };
   return (
     <>
+      <motion.div className="cursor" variants={variants} animate="default" />;
       <HelloMsg />
       <Header />
       <LockScreen />
