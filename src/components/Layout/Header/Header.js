@@ -32,6 +32,8 @@ function Header() {
 
   const logoutHandler = () => {
     dispatch(AuthActions.logOut());
+    localStorage.removeItem("isStart");
+    document.location.reload();
   };
 
   return (
@@ -58,7 +60,7 @@ function Header() {
         <AiOutlinePoweroff
           className="header-icon"
           onClick={() => {
-            localStorage.clear();
+            localStorage.removeItem("isStart");
             navigate("/");
             document.location.reload();
           }}

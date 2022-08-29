@@ -24,7 +24,11 @@ const AuthSlice = createSlice({
       state.userImage = action.payload;
     },
     setLockOpened(state) {
-      state.lockOpend = true;
+      if (state.isAuthenticated) {
+        state.lockOpend = true;
+      } else {
+        return;
+      }
     },
   },
 });
