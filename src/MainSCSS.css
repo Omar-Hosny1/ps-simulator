@@ -81,18 +81,7 @@ code {
   top: 0;
   width: 100%;
   height: 100vh;
-  -webkit-animation: moveing 0.7s ease;
-          animation: moveing 0.7s ease;
-}
-@-webkit-keyframes moveing {
-  0% {
-    opacity: 0;
-    left: 70px;
-  }
-  100% {
-    opacity: 1;
-    left: 0;
-  }
+  animation: moveing 0.7s ease;
 }
 @keyframes moveing {
   0% {
@@ -114,8 +103,7 @@ code {
   font-size: 20px;
   text-align: center;
   letter-spacing: 1.5px;
-  -webkit-animation: posterInfo 0.7s forwards ease-in-out;
-          animation: posterInfo 0.7s forwards ease-in-out;
+  animation: posterInfo 0.7s forwards ease-in-out;
 }
 .poster-info h1 {
   margin: 10px 0 -7px;
@@ -145,17 +133,6 @@ code {
 }
 .poster-info .play-btn:hover {
   background-color: rgb(179, 179, 179);
-}
-@-webkit-keyframes posterInfo {
-  0% {
-    bottom: -250px;
-  }
-  50% {
-    bottom: -250px;
-  }
-  100% {
-    bottom: 0;
-  }
 }
 @keyframes posterInfo {
   0% {
@@ -403,14 +380,14 @@ code {
 .user-msg {
   position: absolute;
   z-index: 10;
-  top: 0;
-  left: -285px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -100%;
   color: rgb(41, 36, 36);
   background-color: rgba(254, 254, 254, 0.7);
   padding: 10px;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
-  margin-top: 270px;
   font-size: 25px;
   text-transform: capitalize;
 }
@@ -420,43 +397,21 @@ code {
 }
 
 .openMsg {
-  -webkit-animation: openMsg 10s ease;
-          animation: openMsg 10s ease;
-}
-
-@-webkit-keyframes openMsg {
-  0% {
-    left: -285px;
-  }
-  30% {
-    left: -285px;
-  }
-  50% {
-    left: 0;
-  }
-  80% {
-    left: 0;
-  }
-  100% {
-    left: -285px;
-  }
+  animation: openMsg 10s ease;
 }
 
 @keyframes openMsg {
   0% {
-    left: -285px;
+    left: -100%;
   }
-  30% {
-    left: -285px;
+  25% {
+    left: -100%;
   }
-  50% {
-    left: 0;
-  }
-  80% {
+  50%, 75% {
     left: 0;
   }
   100% {
-    left: -285px;
+    left: -100%;
   }
 }
 .cursor {
