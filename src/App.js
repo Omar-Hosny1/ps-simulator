@@ -32,11 +32,13 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("isAuthenticated")
   );
+
   useEffect(() => {
     setIsLoggedIn(localStorage.getItem("isAuthenticated"));
   }, [isAuthenticated]);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     fetch(api_properties.API_URL)
       .then((response) => {
@@ -61,7 +63,6 @@ function App() {
         variants={variants}
         animate="default"
       />
-      ;
       <HelloMsg />
       <Header />
       <LockScreen />

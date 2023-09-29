@@ -3,9 +3,7 @@ import MediaCom from "../components/Media/MediaCom";
 
 function Media() {
   return (
-    <>
-      <MediaCom />
-    </>
+    <MediaCom />
   );
 }
 
