@@ -1,45 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { formatTime } from "../../utils/helper-functions";
 
 function Time() {
-  const [time, setTime] = useState({
-    time: () => {
-      let currTime = new Date();
-      let TIME =
-        (currTime.getHours() > 12
-          ? currTime.getHours() % 12
-          : currTime.getHours()) +
-        ":" +
-        currTime.getMinutes() +
-        ":" +
-        currTime.getSeconds();
-      return TIME;
-    },
-  });
+  const [currentTime, setCurrentTime] = useState(formatTime(new Date()));
 
   useEffect(() => {
-    const interval = setInterval(
-      () =>
-        setTime({
-          time: () => {
-            let currTime = new Date();
-            let TIME =
-              (currTime.getHours() > 12
-                ? currTime.getHours() % 12
-                : currTime.getHours()) +
-              ":" +
-              currTime.getMinutes() +
-              " " +
-              (currTime.getHours() > 12 ? "PM" : "AM");
-            return TIME;
-          },
-        }),
-      1000
-    );
+    const interval = setInterval(() => {
+      const currTime = new Date();
+      setCurrentTime(formatTime(currTime));
+    }, 1000);
+
     return () => {
       clearInterval(interval);
     };
   }, []);
-  return <span className="time">{time.time()}</span>;
+
+  return <span className="time">{currentTime}</span>;
 }
 
 export default Time;
